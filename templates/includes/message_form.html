@@ -1,0 +1,7 @@
+<form action="" method="POST" class="text-lg" novalidate>
+    {% csrf_token %}
+    {{ form.as_p }}    
+    <div class="text-right">
+        <button type="submit" class="text-white hover:text-yellow-500 transition">ارسال</button>
+    </div>
+</form>

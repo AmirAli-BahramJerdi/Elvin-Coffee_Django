@@ -15,8 +15,15 @@
     <!-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> -->
     <link rel="stylesheet" href="{% static 'css/tailwind.css' %}">
     <link rel="stylesheet" href="{% static 'css/tooplate-antique-cafe.css' %}">
+     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+
+    
 </head>
 <body>    
+
+
+    {% include "includes/messages.html" %}
+    
     <!-- Intro -->
     <div id="intro" class="parallax-window" data-parallax="scroll" data-image-src="{% static 'img/antique-cafe-bg-01.jpg' %}">
         <nav id="tm-nav" class="fixed w-full">
@@ -31,6 +38,8 @@
                 </ul>
             </div>            
         </nav>
+
+        
         <div class="container mx-auto px-2 tm-intro-width">
             <div class="sm:pb-60 sm:pt-48 py-20">
                 <div class="bg-black bg-opacity-70 p-12 mb-5 text-center">
@@ -191,15 +200,7 @@
                     </div>                    
                 </div>
                 <div class="flex-1 rounded-xl p-12 pb-14 m-5 bg-black bg-opacity-50 tm-item-container">
-                    <form action="" method="POST" class="text-lg">
-                        {% csrf_token %}
-                        <input type="text" name="name" class="input w-full bg-black border-b bg-opacity-0 text-white px-0 py-4 mb-4 tm-border-gold px-4" placeholder="نام" required="" />
-                        <input type="email" name="email" class="input w-full bg-black border-b bg-opacity-0 text-white px-0 py-4 mb-4 tm-border-gold px-4" placeholder="ایمیل" required="" />
-                        <textarea rows="6" name="message" class="input w-full bg-black border-b bg-opacity-0 text-white px-0 py-4 mb-4 tm-border-gold px-4" placeholder="متن..." required=""></textarea>
-                        <div class="text-right">
-                            <button type="submit" class="text-white hover:text-yellow-500 transition">ارسال</button>
-                        </div>                        
-                      </form>
+                    {% include "includes/message_form.html" %}
                 </div>
             </div>
             <footer class="absolute bottom-0 left-0 w-full dir-rtl">
